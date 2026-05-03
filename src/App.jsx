@@ -134,8 +134,7 @@ export default function App() {
   // =====================
   if (isOwnerURL) {
     return (
-      <div style={{ fontFamily: "'Segoe UI', sans-serif", minHeight: "100vh", background: "#F5F4F0", maxWidth: 480, margin: "0 auto" }}>
-
+      <div style={{ fontFamily: "'Segoe UI', sans-serif", minHeight: "100vh", background: "#F5F4F0", width: "100%" }}>
         {/* OWNER NAV */}
         <nav style={{ background: "white", borderBottom: "1px solid #E5E5E0", padding: "0 1rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: 54, position: "sticky", top: 0, zIndex: 100, boxShadow: "0 1px 8px rgba(0,0,0,0.06)" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -153,8 +152,7 @@ export default function App() {
 
         {!user ? (
           // LOGIN PAGE
-          <div style={{ padding: "3rem 1.5rem 2rem" }}>
-            <div style={{ textAlign: "center", marginBottom: "2rem" }}>
+              <div style={{ padding: "3rem 1.5rem 2rem", maxWidth: 400, margin: "0 auto" }}>            <div style={{ textAlign: "center", marginBottom: "2rem" }}>
               <div style={{ fontSize: 56 }}>🔐</div>
               <h2 style={{ fontWeight: 700, fontSize: 22, marginTop: 12 }}>Staff Login</h2>
               <p style={{ color: "#888", fontSize: 14, marginTop: 4 }}>Only canteen staff can access this page</p>
@@ -255,8 +253,7 @@ export default function App() {
         {/* ADD ITEM MODAL */}
         {showAddModal && (
           <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", zIndex: 300, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
-            <div style={{ background: "white", borderRadius: "20px 20px 0 0", width: "100%", maxWidth: 480, padding: "1.5rem 1.25rem 2rem" }}>
-              <h3 style={{ fontWeight: 700, marginBottom: "1rem", fontSize: 17 }}>Add Menu Item</h3>
+          <div style={{ background: "white", borderRadius: "20px 20px 0 0", width: "100%", padding: "1.5rem 1.25rem 2rem" }}>              <h3 style={{ fontWeight: 700, marginBottom: "1rem", fontSize: 17 }}>Add Menu Item</h3>
               {[["Item Name", "name", "text", "e.g. Paneer Butter Masala"], ["Price (₹)", "price", "number", "e.g. 60"], ["Emoji", "emoji", "text", "e.g. 🍛"]].map(([label, key, type, ph]) => (
                 <div key={key} style={{ marginBottom: 12 }}>
                   <label style={{ fontSize: 12, color: "#666", display: "block", marginBottom: 4, fontWeight: 600 }}>{label}</label>
